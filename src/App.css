@@ -1,38 +1,66 @@
-.App {
-  text-align: center;
+#map {
+  height: 180px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-container {
+  border-radius: 5px;
+  border: 0.5px solid rgb(209, 209, 209);
+  width: 30%;
+  overflow: scroll;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 40%;
+  background-color: #fff;
+  z-index: 1000;
+  padding: 0 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.wrapper {
+  position: relative;
+}
+
+.search-coordinates {
+  width: 30%;
+  padding: 20px 0;
+  border-bottom: 0.5px solid rgb(233, 233, 233);
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  position: fixed;
+  background-color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.search-coordinates input {
+  margin-left: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.search-coordinates p {
+  font-weight: bold;
+}
+
+.osm-infos {
+  margin-top: 70px;
+}
+.info {
+  padding-top: 10px;
+  border-bottom: 0.5px solid rgb(209, 209, 209);
+}
+
+.info button {
+  text-align: left;
+  color: rgb(26, 26, 26);
+  background: none;
+  border: none;
+  font-size: 14px;
+  padding: 0;
+}
+
+.info p {
+  font-size: 12px;
+  color: rgb(107, 107, 107);
 }
