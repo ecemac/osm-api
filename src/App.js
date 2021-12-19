@@ -68,7 +68,6 @@ function App() {
     map.setView(center, zoom);
     useMapEvents({
       click(e) {
-        console.log(e);
         let { lat, lng } = e.latlng;
         let newPosition = [lat, lng];
         setPosition(newPosition);
