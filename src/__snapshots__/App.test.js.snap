@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matched snapshot 1`] = `
+<div
+  id="map"
+>
+  <div />
+  <div
+    className="search-container"
+  >
+    <form
+      className="search-coordinates"
+      onSubmit={[Function]}
+    >
+      <label>
+        Lat:
+        <input
+          defaultValue={52.520008}
+          name="lat"
+          onChange={[Function]}
+          type="text"
+        />
+      </label>
+      <label>
+        Long:
+        <input
+          defaultValue={13.404954}
+          name="long"
+          onChange={[Function]}
+          type="text"
+        />
+      </label>
+      <input
+        type="submit"
+        value="Go"
+      />
+    </form>
+    <div
+      className="osm-infos"
+    >
+      <p
+        data-testid="loading"
+      >
+        Loading...
+      </p>
+    </div>
+  </div>
+</div>
+`;

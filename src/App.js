@@ -10,6 +10,15 @@ import {
   useMap,
 } from "react-leaflet";
 
+export const findBbox = (long, lat) => {
+  let left = long - 0.0025;
+  let bottom = lat - 0.0025;
+  let right = long + 0.0025;
+  let top = lat + 0.0025;
+
+  return [left, bottom, right, top];
+};
+
 function App() {
   const [featureCollection, setFeatureCollection] = useState({
     type: "FeatureCollection",
@@ -21,18 +30,9 @@ function App() {
   const [bbox, setBbox] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const findBbox = (long, lat) => {
-    let left = long - 0.0025;
-    let bottom = lat - 0.0025;
-    let right = long + 0.0025;
-    let top = lat + 0.0025;
-
-    let newBbox = [left, bottom, right, top];
-    setBbox(newBbox);
-  };
-
   useEffect(() => {
-    findBbox(position[1], position[0]);
+    let bboxResult = findBbox(position[1], position[0]);
+    setBbox(bboxResult);
   }, [position]);
 
   useEffect(() => {
@@ -128,7 +128,7 @@ function App() {
                 )
             )}
           {!loading && featureCollection.length === 0 && <p>No result.</p>}
-          {loading && <p>Loading...</p>}
+          {loading && <p data-testid="loading">Loading...</p>}
         </div>
       </div>
     </div>
